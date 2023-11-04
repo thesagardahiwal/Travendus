@@ -1,0 +1,136 @@
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Plus Jakarta Sans', sans-serif;
+font-family: 'Varela Round', sans-serif; */
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.container{
+    min-height: 100vh;
+    
+}
+.navbar{
+    height: 5rem;
+    background-color: #fff;
+}
+.fa-compass{
+    color: red;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 ;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-socials{
+    font-size: 1.5rem;
+}
+
+.f-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 6rem;
+    
+    background-color: gainsboro;
+    text-align: center;
+}
+/* Body CSS */
+/* ------------------- */
+
+/* Card CSS */
+.lists{
+   display: flex;
+   justify-content: space-evenly; 
+}
+.card-img-top{
+    height: 200px;
+    border-radius: 1rem;
+}
+
+.card-listing{
+    margin: 1rem 0;
+    border: none;
+}
+.card-body a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.card-body{
+    padding: 0.25rem;
+    z-index: 10;
+}
+
+.card-img-overlay{
+    opacity: 0;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.card-img-overlay:hover {
+    opacity: 0.5;
+    color: #222222;
+    
+}
+
+/* ----------------------- */
+
+/* Buttons */
+
+.color{
+    background-color: red;
+    transition: .5s ;
+    border: none;
+}
+
+/* show image */
+
+.show-img {
+    height: 40vh;
+    width: auto;
+    
+}
+.review {
+    min-height: 20vh;
+}
+
+/* Filters */
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+#filters .filter {
+    margin-right: 1rem;
+    opacity: .7;
+    transition: .5s;
+} 
+#filters .filter p {
+    font-size: .8rem;
+}
+#filters .icon {
+    text-align: center;
+
+}
+#filters .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+.tax-info{
+    display: none;
+}
+.tax-toogle{
+    border: 1px solid rgba(132, 132, 132, 0.407);
+    border-radius: 1rem;
+    height: fit-content;
+    padding: .6rem;
+    background-color: rgba(173, 173, 173, 0.341);
+    color: rgb(0, 0, 0);
+}

@@ -1,0 +1,64 @@
+<% layout('layouts/boilerplate') %>
+<body>
+    <br><br>
+    <div class="row">
+    <div class="col-8 offset-2">
+        <form action="/listings" method="post" novalidate enctype="multipart/form-data" class="needs-validation" >
+            <div class="mb3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="listing[title]" placeholder="eg. Moder" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+            <br>
+            <div class="mb3">
+                <label for="exampleFormControlTextarea3" class="form-label">Description</label>
+                <textarea id="exampleFormControlTextarea3" class="form-control" name="listing[description]" rows="3" required></textarea>
+                <div class="invalid-feedback">
+                    Please write a Description!
+                  </div>
+            </div>
+            <br>
+            
+            <div class="mb3">
+                <label for="exampleFormControlInput2" class="form-label">Upload Images</label>
+                <input type="file" name="listing[image]" class="form-control" id="exampleFormControlInput2">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb3">
+                        <label for="exampleFormControlInput4" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="exampleFormControlInput4" name="listing[price]" placeholder="eg. 1200" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid price!
+                          </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="mb3">
+                        <label for="exampleFormControlInput6" class="form-label">Country</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput6" name="listing[country]" placeholder="eg. India" required>
+                        <div class="invalid-feedback">
+                            Please choose a country!
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="mb3">
+                <label for="exampleFormControlInput5" class="form-label">Location</label>
+                <input type="text" class="form-control" id="exampleFormControlInput5" name="listing[location]" placeholder="eg. Pune" required>
+                <div class="invalid-feedback">
+                    Please choose a location!
+                  </div>
+            </div>
+            
+            <br>
+            <button type="submit" class="btn btn-primary color">Add</button>
+        </form>
+    </div>
+</div>
+    <br><br>
+</body>
