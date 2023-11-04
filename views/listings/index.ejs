@@ -1,6 +1,11 @@
 <% layout('./layouts/boilerplate') -%>
 
+<div class="addList">
+    <button class="btn"><a class="btn btn-danger" href="/listings/new">Travendus Your Home</a></button>
+</div>
+
 <div id="filters">
+    
     <div class="filter">
         <div class="icon"><i class="fa-solid fa-fire"></i></div>
         <p>Trending</p>
@@ -40,6 +45,9 @@
             <label class="form-check-label" for="flexSwitchCheckDefault">Display total tax</label>
           </div>
     </div>
+    
+    
+    
 </div>
 <div class="row lists">
     <% for (let list of allListings) {%>

@@ -3,7 +3,7 @@
 <body>
     <br><br>
     <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-8 reviews offset-2">
         <form action="/listings/<%= listing._id %>/?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data" method="post">
             <div class="mb3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
@@ -23,8 +23,8 @@
             <br>
             <div>
                 <p>preview :</p>
-                <img src="<%= originalUrl %>" alt="">
-                <p><%= originalUrl %></p>
+                <img src="<%= originalUrl %>" width="200px" alt="">
+               
             </div><br>
             <div class="mb3">
                 <label for="exampleFormControlInput2" class="form-label">Update Images</label>

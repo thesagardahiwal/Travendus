@@ -15,6 +15,7 @@
     position: relative;
     margin-top: 7px !important;
 }
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -42,18 +43,43 @@
                 </form>
         </div>
         
+
         
-        <div class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/listings/new">Travendus your home</a>
+        <div class="navbar-nav text-center ms-auto">
+            <li class="nav-item ms-2">
+                <button class="btn btn-light"><a class="nav-link" href="/listings/new">Travendus Your Home</a></button>
             </li>
             <% if(!currentUser) { %>
-                <li><a class="nav-link nav-item" href="/login"><b>Login</b></a></li>
-                <li><a class="nav-link nav-item" href="/signup"><b>Sign Up</b></a></li>
+                <li class="nav-item"><a class="nav-link nav-item" href="/login"><b>Login</b></a></li>
+                <li class="nav-item"><a class="nav-link nav-item" href="/signup"><b>Sign Up</b></a></li>
                 <% } else { %>
-                <li><a class="nav-link nav-item" href="/logout"><b>logout</b></a></li>
+                <li class="nav-item"><a class="nav-link nav-item" href="/logout"><b>logout</b></a></li>
                 <% } %>
            
         </div>
+    </div>
+    <div class="mobContent">
+        <div class="dropdown-center">
+            <button class="btn dropdown-toggle user" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+            </button>
+            <ul class="dropdown-menu">
+                
+                <% if(!currentUser) { %>
+              <li><a class="dropdown-item" href="/login">Login</a></li>
+              <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
+              <% } else { %>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <% } %>
+            </ul>
+          </div>
+        <div class="brandName"><a class="nav-link brandName" href="/listings"><b>Travendus</b></a></div>
+        <div class="searchBar">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search destination" >
+                <button class="btn btn-outline-danger search" type="submit"><i class="search fa-solid fa-magnifying-glass"></i>Search</button>
+            </form>
+        </div>
+        
     </div>
 </nav>

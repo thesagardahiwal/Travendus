@@ -4,23 +4,23 @@
     <div class="container">
         
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-8 showPage offset-2">
                 <h3 class="card-title mt-2 mb-2"><%= listing.title %> </h3>
                 
-                <img src="<%= listing.image.url %>" class="show-img" style="border-radius: 20px;" alt="...">
+                <img src="<%= listing.image.url %>" class="show-img" style="width: 100%; border-radius: 20px;" alt="...">
                 <div class="card card-listing">
                     <div class="card-body">
                       <p><i><%= listing.owner.username %></i></p>
-                      <p class="card-text"><%= listing.description %></p>
-                      <p class="card-text"><small class="text-body-secondary">&#8377; <%= listing.price.toLocaleString("en-IN") %></small></p>
-                      <p class="card-text"><b>Location</b>: <%= listing.location %>, <%= listing.country %></p>
+                      <p class="card-text "><%= listing.description %></p>
+                      <p class="card-text "><small class="text-body-secondary">&#8377; <%= listing.price.toLocaleString("en-IN") %></small></p>
+                      <p class="card-text "><b>Location</b>: <%= listing.location %>, <%= listing.country %></p>
                       
                     </div>
                     <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
                        
                     <div class="card-body row">
                         <p class="col-2"><a href="/listings/<%= listing._id %>/edit" style="color: white;" class="btn btn-primary">Edit</a></p>
-                        <form class="col-10" action="/listings/<%= listing._id %>?_method=DELETE" method="post" >
+                        <form class="col-10 delBtn" action="/listings/<%= listing._id %>?_method=DELETE" method="post" >
                             <button class="btn btn-danger">Delete</button>
                         </form>
                     </div>
@@ -29,8 +29,8 @@
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-8 offset-2">
+        <div class="row reviewSession">
+            <div class="col-8 reviews offset-2">
                 <% if (currentUser) { %>
                     
                 <h4>Leave a Review:</h4>
@@ -63,16 +63,19 @@
 
                 </form>
                 <% } %>
-                <hr>
-                <h4>Recent Reviews :</h4>
+                <% if(listing.reviews.length>0) { %>
+                    
                 <div class="row review">
+                    <h4>Recent Reviews :</h4>
+                    <hr>
                 <% for (review of listing.reviews) { %>
                     
-                    <div class="card col-3 m-2">
-                        <div class="card-body">
-                            <b>@<%= review.owner.username %></b>
-                            <br>
-                            <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
+                    <div class="card reviews reviewBody col-3 m-2">
+                        <div class="card-body ">
+                            <div class="userReview">
+                                <span><b>@<%= review.owner.username %></b></span>
+                                <p class="starability-result rate card-text" data-rating="<%= review.rating %>"></p>
+                            </div>
                             <div class="card-text">
                                 <%= review.comment %>
                             </div>
@@ -85,6 +88,7 @@
                     </div>
                     <% } %>
                 </div>
+                <% } %>
                 
             </div>
         </div>

@@ -10,6 +10,7 @@ const methodOverride = require("method-override");
 const ejsMate = require('ejs-mate');
 
 const ATLUSTDB_URL = process.env.ATLUSTDB_URL;
+const MONGO_DB = 'mongodb://127.0.0.1:27017/travendus';
 const ExpressError = require("./utils/expressError.js");
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
@@ -89,7 +90,10 @@ app.use((req,res,next)=>{
   next();
 })
 
-
+app.get("/", (req, res)=>{
+  res.redirect("/listings");
+  next();
+})
 app.use("/listings", listingRouter);
 app.use("/listings/:id/review", reviewRouter);
 app.use("/", userRouter);
@@ -101,7 +105,7 @@ app.all("*", (req,res, next)=>{
 
 app.use((err,req,res,next)=> {
   let {statusCode=500, message="Error 500"} = err;
-  req.flash ("fail", message)
+  req.flash ("fail", "Something went wrong!!");
   res.redirect("/listings");
 })
 
