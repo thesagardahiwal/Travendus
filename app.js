@@ -26,6 +26,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listings.js");
 const reviewRouter = require("./routes/reviews.js");
 const userRouter = require("./routes/users.js");
+const { measureMemory } = require("vm");
 
 
 main()
@@ -90,10 +91,7 @@ app.use((req,res,next)=>{
   next();
 })
 
-app.get("/", (req, res)=>{
-  res.redirect("/listings");
-  next();
-})
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/review", reviewRouter);
 app.use("/", userRouter);
@@ -105,7 +103,11 @@ app.all("*", (req,res, next)=>{
 
 app.use((err,req,res,next)=> {
   let {statusCode=500, message="Error 500"} = err;
-  req.flash ("fail", "Something went wrong!!");
+  if (statusCode == 404) {
+    req.flash ("success", message);
+  } else {
+    req.flash ("fail", message);
+  }
   res.redirect("/listings");
 })
 
