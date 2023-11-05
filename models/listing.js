@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const ListingSchema = new Schema({
     title: {
         type: String,
-        
+        require: true
     },
     description: String,
     image: {
@@ -33,6 +33,10 @@ const ListingSchema = new Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User"
+    },
+    category: {
+        type: String,
+        require: true
     }
 });
 

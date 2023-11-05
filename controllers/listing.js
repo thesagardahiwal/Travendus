@@ -53,7 +53,6 @@ module.exports.updateListing = async (req, res) => {
     if(!req.body.listing) {
       throw new ExpressError (400, "Send Valid data for listings");
     }
-    console.log(req.params);
     let { id } = req.params;
     let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing }); 
     

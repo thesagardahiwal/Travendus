@@ -40,7 +40,7 @@ body{
     text-align: center;
 }
 /* Body CSS */
-/* ------------------- */
+
 
 /* Card CSS */
 .lists{
@@ -128,7 +128,8 @@ body{
     border: 1px solid rgba(132, 132, 132, 0.407);
     border-radius: 1rem;
     height: fit-content;
-    padding: .6rem;
+    display: flex;
+    padding: .4rem !important;
     background-color: rgba(173, 173, 173, 0.341);
     color: rgb(0, 0, 0);
 }
@@ -144,6 +145,14 @@ body{
 .mobContent{
     display: none;
 }
+.search-result {
+    display: none;
+}
+.category{
+    display: none;
+}
+
+
 @media (max-width: 809px) {
     /* Index Page */
     .container-fluid{
@@ -181,7 +190,7 @@ body{
         width: fit-content !important;
     }
     .reviewSession {
-        font-size: .8rem !important;
+        font-size: 1.25rem !important;
     }
     .rate {
 
@@ -200,6 +209,10 @@ body{
     }
     .addList .btn {
         min-width: 100%;
+    }
+    .login {
+        width: 100% !important;
+        margin-left: 0 !important;
     }
     
 }

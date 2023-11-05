@@ -1,13 +1,15 @@
 <% layout('./layouts/boilerplate.ejs') %>
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-6 login offset-3">
+            
             <form action="/login" method="post" novalidate class="needs-validation">
                 <div class="input-group has-validation mt-5">
+                    
                     <span class="input-group-text">@</span>
-                    <div class="form-floating">
+                    <div class="form-floating" >
                         <input type="text" class="form-control" name="username" id="floatingInputGroup2"
-                            placeholder="Username" required>
-                        <label for="floatingInputGroup2">Username</label>
+                        placeholder="Username" required>
+                        <label class="form-label" for="floatingInputGroup2">Username</label>
                     </div>
                     <div class="invalid-feedback">
                         Please choose a username.
@@ -18,7 +20,11 @@
                     <input type="password" id="inputPassword5" name="password" class="form-control"
                         aria-describedby="passwordHelpBlock" required>
                 </div>
-                <button class="btn btn-primary mt-3">Submit</button>
+                <button class="btn btn-success mt-3">Submit</button>
             </form>
+            <br>
+            In case, you <b>don't</b> have any account Sign Up Please Sign Up to create!
+            <br>
+            <a class="btn btn-warning mt-1" href="/signup">Sign Up</a>
         </div>
     </div>

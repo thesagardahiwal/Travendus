@@ -103,11 +103,7 @@ app.all("*", (req,res, next)=>{
 
 app.use((err,req,res,next)=> {
   let {statusCode=500, message="Error 500"} = err;
-  if (statusCode == 404) {
-    req.flash ("success", message);
-  } else {
-    req.flash ("fail", message);
-  }
+  req.flash ("fail", message);
   res.redirect("/listings");
 })
 

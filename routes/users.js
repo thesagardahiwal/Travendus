@@ -4,6 +4,9 @@ const { use } = require("passport");
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js");
 const userController = require("../controllers/user.js");
+router
+    .route("/")
+    .get(userController.home)
 
 router
     .route("/signup")

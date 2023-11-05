@@ -10,11 +10,16 @@
                 <img src="<%= listing.image.url %>" class="show-img" style="width: 100%; border-radius: 20px;" alt="...">
                 <div class="card card-listing">
                     <div class="card-body">
-                      <p><i><%= listing.owner.username %></i></p>
-                      <p class="card-text "><%= listing.description %></p>
-                      <p class="card-text "><small class="text-body-secondary">&#8377; <%= listing.price.toLocaleString("en-IN") %></small></p>
-                      <p class="card-text "><b>Location</b>: <%= listing.location %>, <%= listing.country %></p>
                       
+                      <p><i>@ <b><%= listing.owner.username %></b></i></p>
+                      <b>Discription</b> :
+                      <p class="card-text "> &nbsp;  &nbsp;  &nbsp; <%= listing.description %></p>
+                      <b>Category</b>:
+                      <p class="card-text"> &nbsp;  &nbsp;  &nbsp; <%= listing.category %></p>
+                      <b>Price</b>:
+                      <p class="card-text ">&nbsp;  &nbsp;  &nbsp; <small class="text-body-secondary">&#8377; <%= listing.price.toLocaleString("en-IN") %></small></p>
+                      <b>location</b>:
+                      <p class="card-text ">&nbsp;  &nbsp;  &nbsp; <%= listing.location %>, <%= listing.country %></p>
                     </div>
                     <% if (currentUser && currentUser._id.equals(listing.owner._id)) { %>
                        
@@ -33,10 +38,9 @@
             <div class="col-8 reviews offset-2">
                 <% if (currentUser) { %>
                     
-                <h4>Leave a Review:</h4>
+                <h4>Leave a Review :</h4>
                 <form action="/listings/<%= listing._id %>/review" method="post" novalidate class="needs-validation">
                     <fieldset class="starability-slot form-group">
-                        <legend>Rating</legend>
                         <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
                         <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                         <label for="first-rate1" title="Terrible">1 star</label>
@@ -66,8 +70,8 @@
                 <% if(listing.reviews.length>0) { %>
                     
                 <div class="row review">
-                    <h4>Recent Reviews :</h4>
                     <hr>
+                    <h4>Recent Reviews :</h4>
                 <% for (review of listing.reviews) { %>
                     
                     <div class="card reviews reviewBody col-3 m-2">

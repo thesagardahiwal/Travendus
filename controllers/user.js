@@ -52,3 +52,8 @@ module.exports.signupForm = (req,res)=>{
 module.exports.loginForm = (req,res) => {
     res.render("users/login.ejs");
 }
+
+module.exports.home = (req, res) => {
+    req.flash("success", "Welcome to Travendus");
+    res.redirect("/listings");
+}
