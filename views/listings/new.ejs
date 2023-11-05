@@ -20,16 +20,61 @@
                   </div>
             </div>
             <br>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Select Catagory</option>
-                <option name="listing[Catagory]" value="1">Rooms</option>
-                <option name="listing[Catagory]" value="2">Iconic Citys</option>
-                <option name="listing[Catagory]" value="3">Castles</option>
-                <option name="listing[Catagory]" value="4">Boat</option>
-                <option name="listing[Catagory]" value="5">Beach</option>
-                <option name="listing[Catagory]" value="6">Campervan</option>
+            <div class="mb3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="listing[title]" value="<%= listing.title %>" required>
+                <div class="invalid-feedback">
+                    Please write a Title!
+                  </div>
+            </div>
+            <br>
+            <div class="mb3">
+                <label for="exampleFormControlTextarea3" class="form-label">Description</label>
+                <textarea id="exampleFormControlTextarea3" class="form-control" required name="listing[description]" rows="3" ><%= listing.description %></textarea>
+                <div class="invalid-feedback">
+                    Please write a Description!
+                  </div>
+            </div>
+            <br>
+            <div class="mb3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios1" value="Rooms">
+                <label class="form-check-label" for="exampleRadios1">
+                  Rooms
+                </label>
+              </div>
 
-              </select>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios2" value="Iconic Citys">
+                <label class="form-check-label" for="exampleRadios2">
+                  Iconic Citys
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios2" value="Castles">
+                <label class="form-check-label" for="exampleRadios2">
+                  Castles
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios2" value="Beach">
+                <label class="form-check-label" for="exampleRadios2">
+                  Beach
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios2" value="Boats">
+                <label class="form-check-label" for="exampleRadios2">
+                  Boats
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="listing[category]" id="exampleRadios2" value="Campervan">
+                <label class="form-check-label" for="exampleRadios2">
+                  Campervan
+                </label>
+              </div>
+            </div>
             <br>
             <div class="mb3">
                 <label for="exampleFormControlInput2" class="form-label">Upload Images</label>
