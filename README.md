@@ -30,7 +30,7 @@ Travendus is a clone of Airbnb, designed to provide a platform for users to list
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/travendus.git
+    git clone https://github.com/thesagardahiwal/Travendus.git
     ```
 2. Navigate to the project directory:
     ```bash
